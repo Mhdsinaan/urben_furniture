@@ -4,7 +4,7 @@ import api from "../../api/api";
 
 export const DataContext = createContext();
 
-export function DataProvider({ children }) {
+ function DataProvider({ children }) {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,7 +16,7 @@ export function DataProvider({ children }) {
       try {
         const response = await api.get("/products");
         setPosts(response.data);
-        console.log(response.data);
+        
       } catch (error) {
         console.error("Error fetching data:", error);
         setError("Failed to fetch data");
@@ -35,7 +35,7 @@ export function DataProvider({ children }) {
   );
 }
 
-
+export default DataProvider;
 export function useData() {
   const context = useContext(DataContext);
   if (!context) {

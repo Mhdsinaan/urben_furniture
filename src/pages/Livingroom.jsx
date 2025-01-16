@@ -2,13 +2,15 @@ import React, { useContext } from 'react';
 import { DataContext } from '../context/DataContext';
 import { Link } from 'react-router-dom';
 
-function Bedroom() {
+function Livingroom() {
   const { posts } = useContext(DataContext);
-  const bedroomData = posts?.filter((item) => item.category === "bedroom");
+  const LivingData = posts?.filter((item) => item.category === "livingroom");
+ 
+  
 
   return (
     <div>
-      {bedroomData?.map((item, index) => (
+      {LivingData?.map((item, index) => (
         <div key={index}>
           <h3>{item.name}</h3>
           <p>{item.description}</p>
@@ -21,4 +23,4 @@ function Bedroom() {
   );
 }
 
-export default Bedroom;
+export default Livingroom;
