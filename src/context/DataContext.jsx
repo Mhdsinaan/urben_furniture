@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState, useContext } from "react";
 import api from "../../api/api";
+import axios from "axios";
 
 
 export const DataContext = createContext();
@@ -28,8 +29,21 @@ export const DataContext = createContext();
     fetchData();
   }, []);
 
+
+
+  ////////////// cart //////////////
+
+  const adcart = async (item)=>{
+    console.log(item);
+    const cartdata = {cart:item}
+    try{
+      const res =await axios.post("http://localhost:3000/user/",cartdata);
+      console.log(res)
+    }
+    
+  }
   return (
-    <DataContext.Provider value={{ posts, loading, error }}>
+    <DataContext.Provider value={{ posts, loading, error ,adcart}}>
       {children}
     </DataContext.Provider>
   );

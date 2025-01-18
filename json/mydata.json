@@ -377,5 +377,70 @@
       "newCollections": true,
       "detailOne": "Sit like a Bond villain whose only real diabolical concern is comfort. Photo by @amyepeters: lounge chair, chair, scandinavian, scandinavian living room, living room, living room designs, living room inspo, decor home living room, neutral living room, cozy corner, reading nook"
     }
+  ],
+  "user": [
+    {
+      "id": "8084",
+      "username": "muhammed",
+      "email": "sinan@gmail.com",
+      "password": "Sinan123",
+      "cpassword": "Sinan123",
+      "role": "user",
+      "block": false
+    },
+    {
+      "id": "bfb8",
+      "username": "muhammed",
+      "email": "muhammeds@gmail.com",
+      "password": "muhammed123",
+      "cpassword": "muhammed123",
+      "role": "user",
+      "block": false
+    },
+    {
+      "id": "3fa3",
+      "username": "sinan",
+      "email": "muhammeds@gmail.com",
+      "password": "sinan123",
+      "cpassword": "sinan123",
+      "role": "user",
+      "block": false
+    },
+    {
+      "id": "197f",
+      "username": "sinan",
+      "email": "mhd@gmail.com",
+      "password": "sinan123",
+      "cpassword": "sinan123",
+      "role": "user",
+      "block": false
+    },
+    {
+      "id": "ce3a",
+      "username": "sinan",
+      "email": "sinamhds@gmail.com",
+      "password": "sinan123",
+      "cpassword": "sinan123",
+      "role": "user",
+      "block": false
+    },
+    {
+      "id": "8885",
+      "username": "moosa",
+      "email": "moosa@gmail.com",
+      "password": "MOOSA123",
+      "cpassword": "MOOSA123",
+      "role": "user",
+      "block": false
+    },
+    {
+      "id": "0f1b",
+      "username": "moosa",
+      "email": "moosa12@gmail.com",
+      "password": "moosa@123",
+      "cpassword": "moosa@123",
+      "role": "user",
+      "block": false
+    }
   ]
 }

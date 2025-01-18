@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../context/DataContext'
 import { Link, useParams } from 'react-router-dom'
 
+
 function ProductDetails() {
   const { posts } = useContext(DataContext)
   const { id } = useParams()
@@ -27,10 +28,11 @@ function ProductDetails() {
             />
             <div className="p-6">
               <h1 className="text-3xl font-semibold text-gray-900 mb-4">{item.name}</h1>
-              <p className="text-gray-600 mb-4">{item.details}</p>
               <p className="text-lg text-red-500 line-through mb-2">{item.old_price}</p>
-              <p className="text-xl font-bold text-gray-900">{item.new_price}</p>
+              <p className="text-xl font-bold text-gray-900">{item.new_price} & free shipping</p>
+              <p className="font-extralight">{item.detailOne}</p><span></span>
               
+  
               <Link to={"/"}>back to home</Link>
             </div>
           </div>

@@ -28,7 +28,7 @@ function Navbar() {
         </div>
         {
           <div className="flex gap-7  ">
-            <Link to={"/Registration"}>
+            <Link to={"/Login"}>
               <FaUserPlus size={26} />
             </Link>
             <Link to={"/"}>
