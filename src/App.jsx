@@ -7,78 +7,110 @@ import Dining from "./pages/Dining";
 import Livingroom from "./pages/Livingroom";
 import Decor from "./pages/Decor";
 import ProductDetails from "./pages/ProductDetails";
-import Login from "./pages/LogIn";
+import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Admin from "./Admin/pages/Admin";
+import Users from "./Admin/pages/Users";
+import AdminProducts from "./Admin/pages/AdminProducts";
+import AddProduct from "./Admin/pages/AddProduct";
+import EditProducts from "./Admin/pages/EditProducts"
+import Order from "./Admin/pages/Order";
+import Cart from "./pages/Cart"
 
 
 
-const rout = createBrowserRouter([
+
+const router = createBrowserRouter([
   {
+    
     path: "/",
     element: <Layout />,
     children: [
       {
+        
         path: "/",
         element: <Home />,
       },
+      
       {
-        path:"/products",
-        element: <Products />
-      }
+        path: "/Bedroom",
+        element: <Bedroom />,
+      },
+      {
+        path: "/Dining",
+        element: <Dining />,
+      },
+      {
+        path: "/Livingroom",
+        element: <Livingroom />,
+      },
+      {
+        path: "/Decor",
+        element: <Decor />,
+      },
+      {
+        path:"/Cart",
+        element:<Cart/>,
+       
+      },
+      {
+        path:"/Products",
+        element:<Products />,
+    
+      },
+      {
+        path: "/:category/ProductDetails/:id",
+        element: <ProductDetails />, 
+      },
+    
+     
     ],
   },
   {
-    path:"/register",
-    element:<Register />
+    path: "/Login",
+    element: <Login />,
+  },
+  
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  
+  {
+    
+    path:"/Admin",
+    element:<Admin/>,
+    
   },
   {
-    path:"/Login",
-    element:<Login/>
+    path:"/Users",
+    element:<Users/>,
+  },
+  {
+    path:"/AdminProducts",
+    element:<AdminProducts/>,
+  },
+  {
+    path:"/AddProduct",
+    element:<AddProduct/>,
+  },
+  // {
+  //   path:"/EditProducts",
+  //   element:<EditProducts/>
+  // },
+  {
+    path: "/EditProducts/:id",
+    element:<EditProducts/>,
+  },
+  {
+    path:"/Order",
+    element:<Order/>,
+  },
 
-  },
-
-  {
-    path:"/Bedroom",
-    element:<Bedroom/>
-  },
-  {
-    path:"/Dining",
-    element:<Dining/>
-  },
-  {
-    path:"/Livingroom",
-    element:<Livingroom/>
-  },
-  {
-    path:"/Decor",
-    element:<Decor/>
-  },
-  {
-    path:"/Dining/ProductDetails/:id",
-    element:<ProductDetails/>
-  },
-  {
-    path:"/Decor/ProductDetails/:id",
-    element:<ProductDetails/>
-  },
-  {
-    path:"/Livingroom/ProductDetails/:id",
-    element:<ProductDetails/>
-  },
-  {
-    path:"/Bedroom/ProductDetails/:id",
-    element:<ProductDetails/>
-  }
 ]);
 
 function App() {
-  return (
-    <>
-        <RouterProvider router={rout} />
-      
-    </>
-    
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

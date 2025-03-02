@@ -1,133 +1,105 @@
-import React, { useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import api from "../../api/api"
 
-function Register() {
+const Register = () => {
+  const [data, setData] = useState([]);
   const [input, setInput] = useState({
-    username: "",
-    email: "",
+    id: "",
+    name: "",
     password: "",
-    cpassword: "",
+    email: "",
+    role: "",
+    cart:[],
+    block: false,
   });
+  const navigate = useNavigate()
+  const [isSubmit, setIsSubmit] = useState(false);
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    const getData = async () => {
+      const response = await api.get("/user");
+      setData(response.data);
+    };
+    getData();
+  }, [isSubmit]);
 
-  const handleData = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (input.password !== input.cpassword) {
-      alert("Passwords do not match");
-      return;
-    }
     try {
-      const response = await axios.post("http://localhost:3000/user", {
-        username: input.username,
-        email: input.email,
-        password: input.password,
-        cpassword: input.cpassword,
-        role: "user",
-        block: false,
-        cart:[],
-      });
+      const response = await api.get(`/user?email=${input.email}`);
+      if (response.data.length > 0) {
+        alert("Email already exists");
+      } else {
 
-      alert("User registered successfully");
-      navigate("/login");
+        const response = await api.post("/user", input);
+        console.log(response.data);
+        alert("you are registered successfully");
+        navigate('/login')
+        setIsSubmit(!isSubmit);
+
+        setInput({
+          name: "",
+          email: "",
+          password: "",
+        });
+      }
     } catch (error) {
-      // Extract error message if available
-      const errorMessage = error.response?.data?.message || "An error occurred while registering. Please try again.";
-      alert(errorMessage);
+      console.log(error);
     }
   };
 
   const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setInput({ ...input, [name]: value });
+    const { name, value } = e.target;
+    setInput({ ...input, [name]: value, id: data.length + 1,role:"user" });
+    console.log(input);
+    
   };
 
+  console.log(input);
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
-      <div className="bg-white p-6 md:p-10 lg:p-14 rounded-lg shadow-lg w-full max-w-md md:max-w-lg flex flex-col gap-6">
-        <h1 className="text-center text-xl font-bold capitalize">Register</h1>
-        <form onSubmit={handleData} className="flex flex-col gap-4">
-          <div>
-            <input
-              id="name"
-              type="text"
-              pattern="^[A-Za-z0-9]{3,16}$" // Ensure it matches the requirement
-              placeholder="Username"
-              className="input p-2 rounded border border-gray-300 w-full"
-              name="username"
-              required
-              onChange={handleChange}
-              value={input.username}
-            />
-            <span className="text-xs text-gray-200 block mt-1">
-              Username should have 3-16 characters
-            </span>
-          </div>
-
-          <div>
-            <input
-              id="email"
-              type="email"
-              placeholder="E-mail"
-              required
-              className="input p-2 rounded border border-gray-300 w-full"
-              name="email"
-              value={input.email}
-              onChange={handleChange}
-            />
-            <span className="text-xs text-gray-200 block mt-1">
-              Enter a valid Email ID
-            </span>
-          </div>
-
-          <div>
-            <input
-              id="password"
-              pattern="^.{8,}$" // Ensure password is at least 8 characters
-              type="password"
-              placeholder="Enter Your Password"
-              required
-              className="input p-2 rounded border border-gray-300 w-full"
-              name="password"
-              value={input.password}
-              onChange={handleChange}
-            />
-            <span className="text-xs text-gray-200 block mt-1">
-              Password minimum 8 characters
-            </span>
-          </div>
-
-          <div>
-            <input
-              id="Cpassword"
-              type="password"
-              placeholder="Confirm Your Password"
-              required
-              className="input p-2 rounded border border-gray-300 w-full"
-              name="cpassword"
-              value={input.cpassword}
-              onChange={handleChange}
-            />
-            <span className="text-xs text-gray-200 block mt-1">
-              Passwords must match
-            </span>
-          </div>
-
-          <button
-            type="submit"
-            className="p-2 bg-green-900 text-white rounded hover:bg-black transition-all w-full"
-          >
+    <div className="main-container flex justify-center items-center">
+      <form onSubmit={handleSubmit}>
+        <div className="flex flex-col justify-center items-center gap-5 w-[400px] p-10 rounded-md border-2 border-white/10 backdrop-blur-md bg-black/10 shadow-lg">
+          <h4 className="text-white text-2xl font-bold font-">Register</h4>
+          <input
+            className="inputStyle"
+            type="text"
+            placeholder="Enter your userName"
+            onChange={handleChange}
+            name="name"
+            value={input.name}
+          />
+          <input
+            className="inputStyle"
+            type="text"
+            placeholder="Enter your Email"
+            onChange={handleChange}
+            name="email"
+            value={input.email}
+          />
+          <input
+            className="inputStyle"
+            type="password"
+            placeholder="password"
+            onChange={handleChange}
+            name="password"
+            value={input.password}
+          ></input>
+          <button className="rounded-md bg-blue-800 text-white w-full p-2 mt-5 font-semibold">
             Register
           </button>
-          <Link to="/Login" className="text-sm text-center">
-            I have an account
-          </Link>
-        </form>
-      </div>
+          <p className="text-white text-xs">
+            already have a account?{" "}
+            <Link to={"/login"} className="underline hover:text-blue-500">
+              Login Here..
+            </Link>
+          </p>
+        </div>
+      </form>
     </div>
   );
-}
-
+};
+ 
 export default Register;

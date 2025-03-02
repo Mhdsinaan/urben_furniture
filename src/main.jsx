@@ -1,13 +1,18 @@
 import { createRoot } from "react-dom/client";
 import DataProvider from "./context/DataContext";
+import { CartProvider } from "./context/cartContext";
 import "./index.css";
 import App from "./App";
-import IdContext from "./context/IdContext";
+import { UsersProvider } from "./context/usersContext";
 
 createRoot(document.getElementById("root")).render(
-  <IdContext>
-    <DataProvider>
-      <App />
-    </DataProvider>
-  </IdContext>
+  
+    <UsersProvider>
+      <DataProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </DataProvider>
+    </UsersProvider>
+ 
 );

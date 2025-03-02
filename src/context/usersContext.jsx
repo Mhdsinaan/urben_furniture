@@ -1,11 +1,10 @@
-import React, { createContext, useEffect, useState, useContext } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import api from "../../api/api";
 
+const UsersContext = createContext();
 
-export const DataContext = createContext();
-
-function DataProvider({ children }) {
-  const [posts, setPosts] = useState([]);
+export function UsersProvider({ children }) {
+  const [user, setUser] = useState([]); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -14,8 +13,10 @@ function DataProvider({ children }) {
       setLoading(true);
       setError(null);
       try {
-        const response = await api.get("/products");
-        setPosts(response.data);
+        const response = await api.get("/user"); 
+        console.log(response.data);
+        
+        setUser(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
         setError("Failed to fetch data");
@@ -28,12 +29,10 @@ function DataProvider({ children }) {
   }, []);
 
   return (
-    <DataContext.Provider value={{ posts, loading, error }}>
+    <UsersContext.Provider value={{ user, loading, error }}>
       {children}
-    </DataContext.Provider>
+    </UsersContext.Provider>
   );
 }
 
-export default DataProvider;
-
-
+export default UsersContext;

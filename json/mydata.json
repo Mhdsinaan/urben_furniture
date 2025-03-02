@@ -326,7 +326,7 @@
       "name": "Bohemian Pillow Set",
       "category": "decor",
       "image": "https://img.freepik.com/free-photo/exterior-outdoors-garden-chair-gardens_1203-4805.jpg?t=st=1719940918~exp=1719944518~hmac=a901b84e687304791b4a68a3f7360ddc79a731407a8a237d701ab2472d3ac8c9&w=740",
-      "new_price": 80,
+      "new_price": "800",
       "old_price": 100,
       "description": "A bohemian throw pillow set for eclectic home decor.",
       "rating": 4.4,
@@ -362,85 +362,349 @@
       "topTrends": false,
       "newCollections": false,
       "detailOne": "An abstract canvas art piece that adds color and sophistication to your living space. The bold strokes and dynamic composition make it a focal point in any room."
-    },
-    {
-      "id": "2eb5",
-      "name": "wivel chair",
-      "category": "livingroom",
-      "image": "https://i.pinimg.com/564x/bc/ea/89/bcea896786826d048bdb6f4d486fc241.jpg",
-      "new_price": 5000,
-      "old_price": 6000,
-      "description": "Turoy ivory s living room design",
-      "rating": 4.9,
-      "reviews": 21,
-      "topTrends": false,
-      "newCollections": true,
-      "detailOne": "Sit like a Bond villain whose only real diabolical concern is comfort. Photo by @amyepeters: lounge chair, chair, scandinavian, scandinavian living room, living room, living room designs, living room inspo, decor home living room, neutral living room, cozy corner, reading nook"
     }
   ],
   "user": [
     {
-      "id": "8084",
-      "username": "muhammed",
-      "email": "sinan@gmail.com",
-      "password": "Sinan123",
-      "cpassword": "Sinan123",
-      "role": "user",
-      "block": false
-    },
-    {
-      "id": "bfb8",
-      "username": "muhammed",
-      "email": "muhammeds@gmail.com",
-      "password": "muhammed123",
-      "cpassword": "muhammed123",
-      "role": "user",
-      "block": false
-    },
-    {
-      "id": "3fa3",
-      "username": "sinan",
-      "email": "muhammeds@gmail.com",
+      "id": "2a0e",
+      "username": "mhd",
+      "email": "sinanmhd1@gmail.com",
       "password": "sinan123",
       "cpassword": "sinan123",
       "role": "user",
-      "block": false
+      "block": false,
+      "cart": [
+        {
+          "id": "13",
+          "name": "Marble Coffee Table",
+          "category": "dining",
+          "image": "https://img.freepik.com/free-photo/morning-cup-coffee-white-table_23-2148251658.jpg?t=st=1719940286~exp=1719943886~hmac=49e3d2a5f78082bf2f655f06b50fd13e36492abc188b131108916f719cf8bbfe&w=740",
+          "new_price": 950,
+          "old_price": 1200,
+          "description": "A sophisticated marble top coffee table for elegant living rooms.",
+          "rating": 4.6,
+          "reviews": 24,
+          "topTrends": true,
+          "newCollections": false,
+          "detailOne": "Enhance your living room with this sophisticated marble top coffee table. The genuine marble surface exudes elegance and luxury, creating a focal point in your decor. Its sturdy base ensures stability while adding a contemporary touch to your interior.",
+          "qty": 1
+        },
+        {
+          "id": "4",
+          "name": "Simple Rustic Wooden Dining Bench",
+          "category": "dining",
+          "image": "https://img.freepik.com/free-photo/high-angle-dining-table-background-zoom-calls_23-2149684457.jpg?t=st=1722847801~exp=1722851401~hmac=5380384229ad3b08e7653f1238c8b6a91f8e41fd80e5f98d9cdb3671fae6ed7a&w=740",
+          "new_price": 300,
+          "old_price": 400,
+          "description": "A rustic wooden dining bench for added seating.",
+          "rating": 4.4,
+          "reviews": 15,
+          "topTrends": false,
+          "newCollections": false,
+          "detailOne": "This Simple Rustic Wooden Dining Bench features an extendable design, allowing you to accommodate extra guests or create more space for serving food. Crafted from solid wood, it offers durability and a classic look that complements any dining room decor.",
+          "qty": 5
+        },
+        {
+          "id": "15",
+          "name": "Bed with pillows",
+          "category": "bedroom",
+          "image": "https://i.pinimg.com/564x/18/28/c0/1828c03ef6795e0ffd7b724bcf54ca32.jpg",
+          "new_price": 1800,
+          "old_price": 2200,
+          "description": "A luxurious velvet upholstered bed for elegant bed with pillows.",
+          "rating": 4.7,
+          "reviews": 29,
+          "topTrends": false,
+          "newCollections": false,
+          "detailOne": "Transform your bedroom into a sanctuary of luxury with this velvet upholstered bed. Its plush headboard and footboard create a focal point, while the sturdy frame provides stability and support. The velvet fabric adds a touch of opulence to your sleeping space.",
+          "quantity": 3
+        },
+        {
+          "id": "16",
+          "name": "Wooden Dresser",
+          "category": "bedroom",
+          "image": "https://i.pinimg.com/enabled_hi/564x/70/f6/b7/70f6b7f0aa7553798044570c28e08997.jpg",
+          "new_price": 950,
+          "old_price": 1200,
+          "description": "A three door modern wooden dresser with ample storage.",
+          "rating": 4.5,
+          "reviews": 26,
+          "topTrends": false,
+          "newCollections": false,
+          "detailOne": "Organize your bedroom with this modern wooden dresser. It features multiple drawers and compartments for storing clothing, accessories, and personal items. The sleek design and clean lines add a contemporary touch to your bedroom decor.",
+          "quantity": 1
+        },
+        {
+          "id": "30",
+          "name": "Abstract Canvas Art",
+          "category": "decor",
+          "image": "https://img.freepik.com/free-vector/abstract-modern-backgrounds-collection_52683-60151.jpg?w=2000",
+          "new_price": 130,
+          "old_price": 160,
+          "description": "A beautiful abstract canvas art piece.",
+          "rating": 4.5,
+          "reviews": 18,
+          "topTrends": false,
+          "newCollections": false,
+          "detailOne": "An abstract canvas art piece that adds color and sophistication to your living space. The bold strokes and dynamic composition make it a focal point in any room.",
+          "quantity": 7
+        },
+        {
+          "id": "25",
+          "name": "Floor Lamp",
+          "category": "decor",
+          "image": "https://i.pinimg.com/564x/89/e0/73/89e073a62cd44b3ecc6d00661a2eace0.jpg",
+          "new_price": 250,
+          "old_price": 300,
+          "description": "A modern floor lamp for contemporary living spaces.",
+          "rating": 4.5,
+          "reviews": 25,
+          "topTrends": true,
+          "newCollections": false,
+          "detailOne": "Illuminate your space with this modern floor lamp. Its sleek design and adjustable height make it ideal for reading nooks, living rooms, or home offices. The sturdy base ensures stability, while the fabric shade diffuses soft, ambient light.",
+          "quantity": 4
+        }
+      ]
     },
     {
-      "id": "197f",
-      "username": "sinan",
+      "id": "5a2a",
+      "username": "sin",
+      "email": "sinan1234@gmail.com",
+      "password": "Kerala@123",
+      "cpassword": "Kerala@123",
+      "role": "user",
+      "block": false,
+      "cart": [
+        {
+          "id": "16",
+          "name": "Wooden Dresser",
+          "category": "bedroom",
+          "image": "https://i.pinimg.com/enabled_hi/564x/70/f6/b7/70f6b7f0aa7553798044570c28e08997.jpg",
+          "new_price": 950,
+          "old_price": 1200,
+          "description": "A three door modern wooden dresser with ample storage.",
+          "rating": 4.5,
+          "reviews": 26,
+          "topTrends": false,
+          "newCollections": false,
+          "detailOne": "Organize your bedroom with this modern wooden dresser. It features multiple drawers and compartments for storing clothing, accessories, and personal items. The sleek design and clean lines add a contemporary touch to your bedroom decor.",
+          "quantity": 5
+        },
+        {
+          "id": "15",
+          "name": "Bed with pillows",
+          "category": "bedroom",
+          "image": "https://i.pinimg.com/564x/18/28/c0/1828c03ef6795e0ffd7b724bcf54ca32.jpg",
+          "new_price": 1800,
+          "old_price": 2200,
+          "description": "A luxurious velvet upholstered bed for elegant bed with pillows.",
+          "rating": 4.7,
+          "reviews": 29,
+          "topTrends": false,
+          "newCollections": false,
+          "detailOne": "Transform your bedroom into a sanctuary of luxury with this velvet upholstered bed. Its plush headboard and footboard create a focal point, while the sturdy frame provides stability and support. The velvet fabric adds a touch of opulence to your sleeping space.",
+          "quantity": 5
+        },
+        {
+          "id": "19",
+          "name": "Upholstered Headboard",
+          "category": "bedroom",
+          "image": "https://img.freepik.com/free-photo/ornate-bed-art-nouveau-style_23-2150975499.jpg?t=st=1719940524~exp=1719944124~hmac=d39e458dded7a31fbbfd11edeb27761c270f383666c19ec3480b9cc9ec74b997&w=740",
+          "new_price": 3000,
+          "old_price": 4998,
+          "description": "A chic upholstered headboard for stylish bedroom decor.",
+          "rating": 4.2,
+          "reviews": 18,
+          "topTrends": true,
+          "newCollections": false,
+          "detailOne": "Transform your bedroom with this chic upholstered headboard. Its padded design offers comfort and support while adding a touch of elegance to your bed. The upholstered fabric is soft to the touch and available in various colors to suit your decor.",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "bac0",
+      "username": "aslah",
+      "email": "aslah@gmail.com",
+      "password": "Aslah@123",
+      "cpassword": "Aslah@123",
+      "role": "user",
+      "block": false,
+      "cart": [
+        {
+          "id": "15",
+          "name": "Bed with pillows",
+          "category": "bedroom",
+          "image": "https://i.pinimg.com/564x/18/28/c0/1828c03ef6795e0ffd7b724bcf54ca32.jpg",
+          "new_price": 1800,
+          "old_price": 2200,
+          "description": "A luxurious velvet upholstered bed for elegant bed with pillows.",
+          "rating": 4.7,
+          "reviews": 29,
+          "topTrends": false,
+          "newCollections": false,
+          "detailOne": "Transform your bedroom into a sanctuary of luxury with this velvet upholstered bed. Its plush headboard and footboard create a focal point, while the sturdy frame provides stability and support. The velvet fabric adds a touch of opulence to your sleeping space.",
+          "quantity": 6
+        },
+        {
+          "id": "17",
+          "name": "Upholstered Storage Bench",
+          "category": "bedroom",
+          "image": "https://i.pinimg.com/enabled_hi/564x/57/5c/14/575c14857df7a76096171531b7d0827c.jpg",
+          "new_price": 350,
+          "old_price": 450,
+          "description": "An upholstered storage bench for practical and stylish seating.",
+          "rating": 4.3,
+          "reviews": 22,
+          "topTrends": true,
+          "newCollections": false,
+          "detailOne": "Add versatility to your bedroom with this upholstered storage bench. It features a cushioned seat upholstered in fabric for comfort and style. The storage compartment beneath the seat offers ample space for blankets, pillows, or other essentials.",
+          "quantity": 1
+        },
+        {
+          "id": "16",
+          "name": "Wooden Dresser",
+          "category": "bedroom",
+          "image": "https://i.pinimg.com/enabled_hi/564x/70/f6/b7/70f6b7f0aa7553798044570c28e08997.jpg",
+          "new_price": 950,
+          "old_price": 1200,
+          "description": "A three door modern wooden dresser with ample storage.",
+          "rating": 4.5,
+          "reviews": 26,
+          "topTrends": false,
+          "newCollections": false,
+          "detailOne": "Organize your bedroom with this modern wooden dresser. It features multiple drawers and compartments for storing clothing, accessories, and personal items. The sleek design and clean lines add a contemporary touch to your bedroom decor.",
+          "quantity": 1
+        },
+        {
+          "id": "22",
+          "name": " Mirrored Vanity Table ",
+          "category": "bedroom",
+          "image": "https://img.freepik.com/free-photo/view-modern-entryway-with-interior-decor_23-2150791082.jpg?t=st=1719940617~exp=1719944217~hmac=a22f726a36991ac983436611a5d154d867292bf12b8a5d0d1210517d6c0abe04&w=740",
+          "new_price": 600,
+          "old_price": 800,
+          "description": "A mirrored vanity table for glamorous bedroom settings.",
+          "rating": 4.5,
+          "reviews": 22,
+          "topTrends": false,
+          "newCollections": true,
+          "detailOne": "Create a glamorous space with this mirrored vanity table. Its reflective surface adds brightness and sophistication to your bedroom decor. The spacious tabletop and drawers provide ample storage for cosmetics, jewelry, and beauty essentials.",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "sinan",
+      "password": "mhdsinan",
+      "email": "sinanjr024@gmail.com",
+      "role": "user"
+    },
+    {
+      "id": "5",
+      "name": "adminuser",
+      "password": "Admin154",
+      "email": "admin154@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": "6",
+      "name": "AdminUser",
+      "password": "admin123",
+      "email": "admin@gmail.com",
+      "role": "user"
+    },
+    {
+      "id": "7",
+      "name": "SINAN",
+      "password": "SINAN024",
+      "email": "SINANMHD@GMAIL.COM",
+      "role": "admin"
+    },
+    {
+      "id": "8",
+      "name": "sinanmuhammed",
+      "password": "sinan024",
+      "email": "sinanmhd098@gmail.com",
+      "role": "user",
+      "cart": []
+    },
+    {
+      "id": "9",
+      "name": "sinan",
+      "password": "sinan123",
+      "email": "sinanm@gmail.com",
+      "role": "user",
+      "cart": []
+    },
+    {
+      "id": "10",
+      "name": "cr7",
+      "password": "cr7sinan",
+      "email": "cr7@gmail.com",
+      "role": "user",
+      "cart": []
+    },
+    {
+      "id": "11",
+      "name": "neymer",
+      "password": "neymer123",
+      "email": "neymer@gmail.com",
+      "role": "user",
+      "cart": []
+    },
+    {
+      "id": "12",
+      "name": "mhd",
+      "password": "mhd123",
       "email": "mhd@gmail.com",
-      "password": "sinan123",
-      "cpassword": "sinan123",
       "role": "user",
-      "block": false
+      "cart": []
     },
     {
-      "id": "ce3a",
-      "username": "sinan",
-      "email": "sinamhds@gmail.com",
-      "password": "sinan123",
-      "cpassword": "sinan123",
+      "id": "13",
+      "name": "brid",
+      "password": "bridg123",
+      "email": "bridge@gmail.com",
       "role": "user",
-      "block": false
+      "cart": []
     },
     {
-      "id": "8885",
-      "username": "moosa",
-      "email": "moosa@gmail.com",
-      "password": "MOOSA123",
-      "cpassword": "MOOSA123",
+      "id": "14",
+      "name": "ronaldo",
+      "password": "ronaldo123",
+      "email": "ronaldo@gmail.com",
       "role": "user",
-      "block": false
+      "cart": []
+    }
+  ],
+  "order": [
+    {
+      "userId": "1",
+      "userName": "sinan",
+      "productName": "Upholstered Storage Bench",
+      "productImage": "https://i.pinimg.com/enabled_hi/564x/57/5c/14/575c14857df7a76096171531b7d0827c.jpg",
+      "quantity": 1,
+      "totalPrice": 600,
+      "id": "08ea"
     },
     {
-      "id": "0f1b",
-      "username": "moosa",
-      "email": "moosa12@gmail.com",
-      "password": "moosa@123",
-      "cpassword": "moosa@123",
-      "role": "user",
-      "block": false
+      "userId": "2",
+      "userName": "bazil",
+      "productName": "Mirrored Vanity Table",
+      "productImage": "https://img.freepik.com/free-photo/view-modern-entryway-with-interior-decor_23-2150791082.jpg?t=st=1719940617~exp=1719944217~hmac=a22f726a36991ac983436611a5d154d867292bf12b8a5d0d1210517d6c0abe04&w=740",
+      "quantity": 2,
+      "totalPrice": 700,
+      "id": "dd0e"
+    },
+    {
+      "userId": "3",
+      "userName": "NIHAL",
+      "productName": "Mirrored Vanity Table",
+      "productImage": "https://img.freepik.com/free-photo/view-modern-entryway-with-interior-decor_23-2150791082.jpg?t=st=1719940617~exp=1719944217~hmac=a22f726a36991ac983436611a5d154d867292bf12b8a5d0d1210517d6c0abe04&w=740",
+      "quantity": 2,
+      "totalPrice": 700,
+      "id": "dd0e"
     }
   ]
 }

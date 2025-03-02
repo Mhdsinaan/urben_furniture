@@ -1,135 +1,116 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import  { Idcontext } from "../context/IdContext";
+import api from "../../api/api"; 
 
-function Login() {
-  const [input, setInput] = useState({
-    email: "",
+const Login = () => {
+  const navigate = useNavigate();
+  const [detail, setDetail] = useState({
+    name: "",
     password: "",
   });
-  const { user,active,setActive } = useContext(Idcontext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userData, setUserData] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
 
-  
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUserData(JSON.parse(storedUser));
+      setIsLoggedIn(true);
+    }
+  }, []);
 
-
-  const navigate = useNavigate();
-
-  const handleData = async (e) => {
-    e.preventDefault();
-    const loginData = user?.find(
-      (item) =>
-        item.email == input.email && 
-        item.password == input.password && 
-        item.block == false
-    );
-
-     
-       
-
-    console.log(loginData);
-    
-    if (!loginData) {
-      alert("Invalid email or password, or account is blocked.");
-      
-     } else {
-   
-      localStorage.setItem("user",JSON.stringify(loginData))
-      setActive(loginData) 
-        navigate('/')
-      
-     } 
-     
-      
- 
-  }
-  useEffect(()=>{
-    const res=localStorage.getItem("user")
-   
-    setActive(JSON.parse(res))
-    
-  },[])
-    const handleChange = (e) => {
-      const name = e.target.name;
-      const value = e.target.value;
-      setInput({ ...input, [name]: value });
-    };
-    const logout=(()=>{
-      localStorage.removeItem("user")
-      setActive();
-    })
-    console.log("dataa",active);
-    
-
-
-    return (
-      <div className="flex items-center justify-center h-screen bg-gray-100">
-        {active ? (
-          <div className="flex justify-center items-center min-h-screen bg-gray-100">
-          <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md text-center">
-            
-            <img 
-              src="jgjj" 
-              alt="User Image" 
-              className="w-24 h-24 mx-auto rounded-full border-2 border-gray-300 mb-4" 
-            />
-            
-            <h1 className="text-xl font-semibold text-gray-700 mb-2">{`Name: ${active.username}`}</h1>
-            <h1 className="text-lg text-gray-600 mb-6">{`Email: ${active.email}`}</h1>
-        
-            <div className="space-x-4">
-              <Link to={'/Login'}>
-                <button onClick={logout}  className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition duration-200">
-                  Log Out
-                </button>
-              </Link>
-              <Link to={'/'}>
-                <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">
-                  Home
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-        
-        ):(
-          <div className=" flex flex-col gap-6 bg-white p-14 rounded-lg shadow-lg">
-          <h1 className="text-center text-xl font-bold capitalize">login</h1>
-          <form onSubmit={handleData} className="flex flex-col gap-4">
-            <input
-              type="email"
-              onChange={handleChange}
-              value={input.email}
-              placeholder="E-mail"
-              required
-              name="email"
-              className="p-2 rounded border border-gray-300 outline-none"
-            />
-
-            <input
-              type="password"
-              onChange={handleChange}
-              value={input.password}
-              placeholder="Enter Your Password"
-              required
-              name="password"
-              className="p-2 rounded border border-gray-300 outline-none"
-            />
-
-            <button
-              type="submit"
-              className="p-2 bg-green-900 text-white rounded hover:bg-black"
-            >
-              Login
-            </button>
-            <Link to={"/register"} className="text-sm">
-              Create a new Account ?
-            </Link>
-          </form>
-        </div>
-        )}
-      </div>
-    );
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setDetail({ ...detail, [name]: value });
+    setErrorMessage(null);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!detail.name || !detail.password) {
+      setErrorMessage("Please fill in all fields");
+      return;
+    }
+
+    try {
+      const response = await api.get("/user");
+      const data = response.data;
+      const user = data.find(
+        (user) =>
+          (detail.name === user.email || detail.name === user.name) &&
+          user.password === detail.password
+      );
+
+      if (user) {
+        localStorage.setItem("user", JSON.stringify(user));
+        setIsLoggedIn(true);
+        setUserData(user);
+        setErrorMessage(null);
+        if (user.role === "admin") {
+          navigate("/Admin");
+        } else {
+          navigate("/");
+        }
+      } else {
+        setErrorMessage("Invalid username or password");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      setErrorMessage("An error occurred. Please try again later.");
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setIsLoggedIn(false);
+    setUserData(null);
+  };
+
+  return (
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      {isLoggedIn ? (
+        <div className="bg-white p-4 rounded shadow w-64 text-center">
+          <h2 className="text-lg font-semibold">Welcome, {userData.name}!</h2>
+          <p className="text-sm mb-2">{userData.email}</p>
+          <button
+            onClick={handleLogout}
+            className="bg-red-500 text-white p-2 w-full rounded"
+          >
+            Logout
+          </button>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="bg-white p-4 rounded shadow w-64">
+          <h4 className="text-lg font-semibold text-center mb-4">Login</h4>
+          <input
+            className="w-full p-2 mb-4 border border-gray-300 rounded"
+            type="text"
+            placeholder="Username or Email"
+            onChange={handleInput}
+            value={detail.name}
+            name="name"
+          />
+          <input
+            className="w-full p-2 mb-4 border border-gray-300 rounded"
+            type="password"
+            placeholder="Password"
+            onChange={handleInput}
+            value={detail.password}
+            name="password"
+          />
+          {errorMessage && <p className="text-red-500 text-xs mb-4">{errorMessage}</p>}
+          <button className="w-full p-2 bg-blue-500 text-white rounded">
+            Login
+          </button>
+          <p className="text-sm mt-4 text-center">
+            Don't have an account?{" "}
+            <Link to="/register" className="text-blue-500">Register Here</Link>
+          </p>
+        </form>
+      )}
+    </div>
+  );
+};
 
 export default Login;
